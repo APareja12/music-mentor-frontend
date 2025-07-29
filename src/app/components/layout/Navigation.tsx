@@ -13,7 +13,7 @@ import {
   CreditCardIcon,
   Cog6ToothIcon,
 } from '@heroicons/react/24/outline';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
