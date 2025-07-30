@@ -1,324 +1,367 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import {
-  PlayIcon,
-  StarIcon,
-  UserGroupIcon,
-  AcademicCapIcon,
-  TrophyIcon,
-  ArrowRightIcon,
-  CheckIcon,
-} from '@heroicons/react/24/outline';
-import Button from '@/components/ui/Button';
-
-export default function HomePage() {
-  const features = [
-    {
-      icon: AcademicCapIcon,
-      title: 'Expert Instructors',
-      description:
-        'Learn from world-class musicians and industry professionals',
-    },
-    {
-      icon: UserGroupIcon,
-      title: '1-on-1 Mentorship',
-      description: 'Personalized guidance tailored to your musical journey',
-    },
-    {
-      icon: TrophyIcon,
-      title: 'Proven Results',
-      description:
-        'Join thousands of students who have achieved their musical goals',
-    },
-  ];
-
-  const stats = [
-    { number: '10,000+', label: 'Students Taught' },
-    { number: '500+', label: 'Expert Instructors' },
-    { number: '50+', label: 'Instruments' },
-    { number: '95%', label: 'Success Rate' },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Chen',
-      role: 'Guitar Student',
-      content:
-        'The personalized approach helped me master techniques I struggled with for years.',
-      rating: 5,
-      avatar: '👩‍🎤',
-    },
-    {
-      name: 'Marcus Johnson',
-      role: 'Piano Student',
-      content:
-        'My instructor understood exactly what I needed to reach the next level.',
-      rating: 5,
-      avatar: '👨‍🎹',
-    },
-    {
-      name: 'Elena Rodriguez',
-      role: 'Violin Student',
-      content:
-        'The flexibility and quality of instruction exceeded all my expectations.',
-      rating: 5,
-      avatar: '🎻',
-    },
-  ];
-
+export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div
+      style={{
+        minHeight: '100vh',
+        background: '#0f172a',
+        color: 'white',
+      }}
+    >
+      {/* Navigation */}
+      <nav
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          background: 'rgba(15, 23, 42, 0.8)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '1px solid rgba(51, 65, 85, 0.5)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '0 1rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: '4rem',
+          }}
+        >
+          {/* Logo */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div
+              style={{
+                width: '2.5rem',
+                height: '2.5rem',
+                background: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                borderRadius: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '1.25rem',
+              }}
+            >
+              🎵
+            </div>
+            <span
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(to right, #a78bfa, #f472b6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Music Mentorship
+            </span>
+          </div>
+
+          {/* Auth Buttons */}
+          <div
+            style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+          >
+            <button
+              className="nav-button-login"
+              style={{
+                padding: '0.5rem 1rem',
+                color: '#cbd5e1',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              Login
+            </button>
+            <button
+              className="nav-button-cta"
+              style={{
+                padding: '0.5rem 1.5rem',
+                background: 'linear-gradient(to right, #a855f7, #ec4899)',
+                borderRadius: '0.75rem',
+                color: 'white',
+                fontWeight: '600',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'transform 0.2s',
+              }}
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-500/20 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl animate-pulse-slow delay-1000" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-accent-500/10 rounded-full blur-3xl animate-float" />
+      <section
+        style={{
+          position: 'relative',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          paddingTop: '4rem',
+        }}
+      >
+        {/* Background Elements */}
+        <div style={{ position: 'absolute', inset: 0 }}>
+          <div
+            className="bg-orb-1"
+            style={{
+              position: 'absolute',
+              top: '25%',
+              left: '25%',
+              width: '18rem',
+              height: '18rem',
+              background: 'rgba(168, 85, 247, 0.2)',
+              borderRadius: '50%',
+              filter: 'blur(3rem)',
+              animation: 'pulse 4s infinite',
+            }}
+          />
+          <div
+            className="bg-orb-2"
+            style={{
+              position: 'absolute',
+              bottom: '25%',
+              right: '25%',
+              width: '24rem',
+              height: '24rem',
+              background: 'rgba(236, 72, 153, 0.2)',
+              borderRadius: '50%',
+              filter: 'blur(3rem)',
+              animation: 'pulse 4s infinite',
+            }}
+          />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 10,
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '0 1rem',
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
           >
             {/* Main Headline */}
-            <h1 className="text-responsive-xl font-display font-bold text-gradient text-shadow leading-tight">
-              Master Your Musical
-              <br />
-              <span className="text-gradient-secondary">Journey</span>
+            <h1
+              style={{
+                fontSize: 'clamp(3rem, 8vw, 6rem)',
+                fontWeight: 'bold',
+                lineHeight: '1.1',
+                marginBottom: '1rem',
+              }}
+            >
+              <div
+                style={{
+                  background:
+                    'linear-gradient(to right, #a78bfa, #f472b6, #a855f7)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  display: 'block',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                Master Your Musical
+              </div>
+              <div
+                style={{
+                  background: 'linear-gradient(to right, #f472b6, #fb7185)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Journey
+              </div>
             </h1>
 
             {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            <p
+              style={{
+                fontSize: 'clamp(1.125rem, 2vw, 1.5rem)',
+                color: '#cbd5e1',
+                maxWidth: '48rem',
+                margin: '0 auto',
+                lineHeight: '1.6',
+              }}
             >
               Connect with world-class music instructors and unlock your
               potential through personalized 1-on-1 mentorship and
               expert-crafted courses.
-            </motion.p>
+            </p>
 
             {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+                paddingTop: '2rem',
+              }}
             >
-              <Button size="xl" className="group">
+              <button
+                className="cta-primary"
+                style={{
+                  padding: '1rem 2rem',
+                  fontSize: '1.125rem',
+                  background: 'linear-gradient(to right, #a855f7, #ec4899)',
+                  borderRadius: '1rem',
+                  color: 'white',
+                  fontWeight: '600',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 10px 25px rgba(168, 85, 247, 0.3)',
+                  transition: 'transform 0.2s',
+                }}
+              >
                 Start Learning Today
-                <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </button>
 
-              <Button variant="glass" size="xl" className="group">
-                <PlayIcon className="w-5 h-5 mr-2" />
+              <button
+                className="cta-secondary"
+                style={{
+                  padding: '1rem 2rem',
+                  fontSize: '1.125rem',
+                  background: 'rgba(30, 41, 59, 0.5)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(51, 65, 85, 1)',
+                  borderRadius: '1rem',
+                  color: 'white',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  transition: 'all 0.2s',
+                }}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M6.3 3.7a1 1 0 011.4-.4l8 4a1 1 0 010 1.8l-8 4a1 1 0 01-1.4-1.4V3.7z" />
+                </svg>
                 Watch Demo
-              </Button>
-            </motion.div>
+              </button>
+            </div>
 
             {/* Social Proof */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex items-center justify-center space-x-6 pt-8"
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '1.5rem',
+                paddingTop: '2rem',
+                flexWrap: 'wrap',
+              }}
             >
-              <div className="flex items-center space-x-1">
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.25rem',
+                }}
+              >
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon
+                  <svg
                     key={i}
-                    className="w-5 h-5 text-yellow-400 fill-current"
-                  />
+                    width="20"
+                    height="20"
+                    fill="#fbbf24"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
                 ))}
               </div>
-              <span className="text-gray-300">
+              <span style={{ color: '#cbd5e1' }}>
                 Rated 4.9/5 by 10,000+ students
               </span>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white/60 rounded-full mt-2"
-            />
+            </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
+      <section
+        style={{
+          padding: '5rem 0',
+          borderTop: '1px solid rgba(30, 41, 59, 1)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '0 1rem',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '2rem',
+            }}
+          >
+            {[
+              { number: '10,000+', label: 'Students Taught' },
+              { number: '500+', label: 'Expert Instructors' },
+              { number: '50+', label: 'Instruments' },
+              { number: '95%', label: 'Success Rate' },
+            ].map((stat, index) => (
+              <div key={index} style={{ textAlign: 'center' }}>
+                <div
+                  style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 3rem)',
+                    fontWeight: 'bold',
+                    background: 'linear-gradient(to right, #a78bfa, #f472b6)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    marginBottom: '0.5rem',
+                  }}
+                >
                   {stat.number}
                 </div>
-                <div className="text-gray-400 text-sm md:text-base">
+                <div style={{ color: '#94a3b8', fontSize: '0.875rem' }}>
                   {stat.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
-              Why Choose Music Mentorship?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the difference that personalized, expert instruction
-              can make in your musical journey.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="glass-card p-8 rounded-2xl card-hover group"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
-              Student Success Stories
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Hear from our community of musicians who have transformed their
-              skills and achieved their dreams.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="glass-card p-8 rounded-2xl card-hover"
-              >
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon
-                      key={i}
-                      className="w-5 h-5 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-                <div className="flex items-center space-x-3">
-                  <div className="text-2xl">{testimonial.avatar}</div>
-                  <div>
-                    <div className="font-semibold text-white">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-gray-400 text-sm">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 border-t border-white/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="glass-card p-12 rounded-3xl"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
-              Ready to Begin Your Musical Journey?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of students who have discovered their musical
-              potential. Start with a free trial lesson today.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/register">
-                <Button size="xl" className="group">
-                  Start Free Trial
-                  <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-              <Link href="/courses">
-                <Button variant="outline" size="xl">
-                  Browse Courses
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
