@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,12 +58,18 @@ export default function Home() {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <button className="px-4 py-2 text-slate-300 hover:text-white text-sm transition-colors">
+                <Link
+                  href="/login"
+                  className="px-4 py-2 text-slate-300 hover:text-white text-sm transition-colors"
+                >
                   Login
-                </button>
-                <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold text-sm hover:shadow-lg transition-all">
+                </Link>
+                <Link
+                  href="/register"
+                  className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold text-sm hover:shadow-lg transition-all"
+                >
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -110,12 +117,18 @@ export default function Home() {
                   Reviews
                 </a>
                 <div className="pt-3 border-t border-slate-700 flex flex-col space-y-2">
-                  <button className="text-left text-slate-300 hover:text-white">
+                  <Link
+                    href="/login"
+                    className="text-left text-slate-300 hover:text-white"
+                  >
                     Login
-                  </button>
-                  <button className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold text-center">
+                  </Link>
+                  <Link
+                    href="/register"
+                    className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold text-center"
+                  >
                     Get Started
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -496,7 +509,7 @@ export default function Home() {
                 name: 'Sarah Martinez',
                 instrument: 'Guitar & Bass',
                 image:
-                  'https://images.unsplash.com/photo-1643409848582-c13955fbabdc?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                  'https://images.unsplash.com/photo-1494790108755-2616c6b1e54c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80',
                 bio: 'Berklee graduate with 15+ years teaching experience',
                 specialties: ['Rock', 'Blues', 'Jazz'],
               },
